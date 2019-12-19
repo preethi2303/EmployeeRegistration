@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
+## Setup
+1. clone  the project using `git clone https://github.com/preethi2303/EmployeeRegistration`
+2. Run `npm install`
+3. Run `ng serve`
+4. Run `ngx json-server -p 4444 employee.json` //local json to store data
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
