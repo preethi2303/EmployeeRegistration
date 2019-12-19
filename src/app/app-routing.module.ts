@@ -5,12 +5,10 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 
 
 const routes: Routes = [
-  // {path:'registerEmployee',component:EmployeeRegistrationComponent},
-  // {path:'',component:EmployeeListComponent}
-  {path:'employeeList',component:EmployeeListComponent},
-  {path:'',component:EmployeeRegistrationComponent},
+  { path: '', redirectTo: 'employeeRegistration', pathMatch: 'full' },
+  { path: 'employeeRegistration', component: EmployeeRegistrationComponent },
+  { path: 'employeeList', component: EmployeeListComponent },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

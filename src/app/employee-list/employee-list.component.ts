@@ -15,7 +15,7 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[];
 
   constructor(private employeeService: EmployeeService,
-    private router: Router) {}
+    private router: Router) { }
 
   ngOnInit() {
     this.reloadData();
@@ -23,13 +23,7 @@ export class EmployeeListComponent implements OnInit {
 
   reloadData() {
     this.employeeService.getEmployeesList().
-    subscribe((resp: Employee[]) =>this.employees = _.orderBy(resp , ['firstName'],['asc']));
+      subscribe((resp: Employee[]) => this.employees = _.orderBy(resp, ['firstName'], ['asc']));
   }
-
-  employeeDetails(id: number){
-    this.router.navigate(['details', id]);
-  }
-
- 
 
 }
