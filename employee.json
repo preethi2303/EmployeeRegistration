@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "firstName": "preeti",
+      "lastName": 111,
+      "gender": "female",
+      "date": "2019-12-18",
+      "department": "Hr",
+      "id": 2
+    },
+    {
+      "firstName": "derty",
+      "lastName": 111,
+      "gender": "female",
+      "date": "2019-12-20",
+      "department": "IT",
+      "id": 3
+    },
+    {
+      "firstName": "AKB",
+      "lastName": 22,
+      "gender": "female",
+      "date": "2019-12-20",
+      "department": "IT",
+      "id": 4
+    },
+    {
+      "firstName": "bbb",
+      "lastName": 222,
+      "gender": "other ",
+      "date": "2019-12-20",
+      "department": "support",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "firstName": "sand",
+    "lastName": 11,
+    "gender": "female",
+    "date": "2019-12-20",
+    "department": "IT"
+  }
+}

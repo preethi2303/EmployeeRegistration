@@ -1,0 +1,57 @@
+<h3 class="text-center padding-10px">Register Employee</h3>
+<div  style='margin:auto' class="col-sm-6">
+  <form [formGroup]='employeeFrom' (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" formControlName='firstName' name="firstName">
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="number" class="form-control" id="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"  formControlName='lastName'  name="lastName">
+      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+    <label for="name">Gender : </label>
+        <input  class="radio-inline margin-10px" type="radio" value='male' name="gender" formControlName='gender'>Male
+        <input class="radio-inline margin-10px" type="radio"  value='female'name="gender" formControlName='gender'>Female
+        <input type="radio" class="radio-inline margin-10px" value='other ' name="gender" formControlName='gender'>Other
+        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                <div *ngIf="f.gender.errors.required">Gender is required</div>
+          </div>
+    </div>
+
+     <div class="form-group">
+      <label for="name">Date</label>
+      <input type="date" class="form-control datepicker"  formControlName='date'  name="date">
+      <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+            <div *ngIf="f.date.errors.required">Date is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Department</label>
+        <select class="custom-select" (change)="selectDepartment($event)" formControlName="department">
+                <option value="" disabled>Choose your city</option>
+                <option *ngFor="let department of departments" [ngValue]="department">{{department}}</option>
+             </select>
+             <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
+                    <div *ngIf="f.department.errors.required">Department is required</div>
+              </div>
+    </div>
+    <div class='margin-10px'>
+    <button type="submit" class="btn btn-success btn-sm col-sm-2 margin-10px">Submit</button> 
+            <a class='btn btn-primary btn-sm col-sm-6 offset-sm-3' [routerLink]="['/employeeList']">Employee List</a>
+        </div>
+  </form>
+</div>
+<!-- 
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+</div> -->
