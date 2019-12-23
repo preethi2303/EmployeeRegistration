@@ -21,39 +21,39 @@
 
     <div class="form-group">
       <label for="name">Gender : </label>
-      <input class="radio-inline margin-10px" type="radio" value='male' name="gender" formControlName='gender'>Male
+      <input class="radio-inline margin-10px" type="radio" value='male' name="gender" formControlName='gender' [ngClass]="{ 'is-invalid': submitted && f.gender.errors}">Male
       <input class="radio-inline margin-10px" type="radio" value='female' name="gender" formControlName='gender'>Female
       <input type="radio" class="radio-inline margin-10px" value='other ' name="gender" formControlName='gender'>Other
       <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-        <div *ngIf="f.gender.errors.required">Gender is required</div>
+        <div *ngIf="f.gender.errors">Gender is required</div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="name">Date</label>
-      <input type="date" class="form-control datepicker" formControlName='date' name="date">
+      <input type="date" class="form-control datepicker" formControlName='date' name="date" [ngClass]="{ 'is-invalid': submitted && f.date.errors}">
       <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
-        <div *ngIf="f.date.errors.required">Date is required</div>
+        <div *ngIf="f.date.errors">Date is required</div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="name">Department</label>
-      <select class="custom-select" formControlName="department">
-        <option value="" disabled>Choose your city</option>
+      <select class="custom-select" formControlName="department" [ngClass]="{ 'is-invalid': submitted && f.department.errors}" >
+        <option disabled>Choose your Department</option>
         <option *ngFor="let department of departments" [ngValue]="department">{{department}}</option>
       </select>
       <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
-        <div *ngIf="f.department.errors.required">Department is required</div>
+        Department is required
       </div>
     </div>
-    <div class='margin-10px'>
+    <div class='margin-20px'>
       <button type="submit" class="btn btn-success btn-sm col-sm-2 ">Submit</button>
       <a class='btn btn-primary btn-sm col-sm-6 offset-sm-3' [routerLink]="['/employeeList']">Employee List</a>
     </div>
   </form>
 
-  <div [hidden]="!registered">
-    <h4>Registered successfully!</h4>
+  <div [hidden]="!registered" class="alert alert-success" role="alert">
+      <strong>Success!</strong> You have been signed in successfully!
   </div>
 </div>

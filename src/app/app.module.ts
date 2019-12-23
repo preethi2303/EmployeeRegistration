@@ -22,7 +22,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     AppRoutingModule,
     
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

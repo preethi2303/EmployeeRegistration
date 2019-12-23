@@ -10,18 +10,13 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
-  baseGetUrl = 'http://localhost:4444/posts';
-  basePostUrl = 'http://localhost:4444/posts';
+  baseUrl = 'http://localhost:4444/posts';
+ 
   getEmployeesList():Observable<Employee[]>{
-    return this.http.get<Employee[]>(this.baseGetUrl);
+    return this.http.get<Employee[]>(this.baseUrl);
   }
-
-  // getById(id){
-  //   return this.http.get(this.baseGetUrl+'/'+id);
-  // }
-
   createEmployee(data){
-    return this.http.post(this.basePostUrl,data);
+    return this.http.post(this.baseUrl,data);
   }
 
  

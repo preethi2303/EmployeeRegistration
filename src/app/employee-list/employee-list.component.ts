@@ -13,9 +13,8 @@ import * as _ from 'lodash';
 export class EmployeeListComponent implements OnInit {
 
   employees: Employee[];
-
-  constructor(private employeeService: EmployeeService,
-    private router: Router) { }
+  error:Error;
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
     this.reloadData();
@@ -23,7 +22,8 @@ export class EmployeeListComponent implements OnInit {
 
   reloadData() {
     this.employeeService.getEmployeesList().
-      subscribe((resp: Employee[]) => this.employees = _.orderBy(resp, ['firstName'], ['asc']));
+      subscribe((resp: Employee[]) => this.employees = _.orderBy(resp, ['firstName'], ['asc']),
+      (error :Error)=>{ this.error = error;console.log(error)});
   }
 
 }

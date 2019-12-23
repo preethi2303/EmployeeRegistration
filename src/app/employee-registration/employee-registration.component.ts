@@ -28,6 +28,7 @@ export class EmployeeRegistrationComponent implements OnInit {
 
   get f() { return this.employeeFrom.controls }
 
+
   onSubmit() {
     if (this.employeeFrom.invalid) {
       this.submitted = true;
@@ -38,6 +39,9 @@ export class EmployeeRegistrationComponent implements OnInit {
     this.employeeFrom.reset();
     this.submitted = false;
     this.registered = true;
+    setTimeout( () => {
+      this.registered = false;
+    }, 4000);
   }
 
 }

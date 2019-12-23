@@ -1,4 +1,4 @@
-# EmployeeDetailsApp
+# EmployeeRegistration
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. Run `npm install`
 3. Run `ng serve`
 4. Run `ngx json-server -p 4444 employee.json` //local json to store data
+5. Run `ng test` to execute the unit tests via [Karma].
 
 ## Development server
 
